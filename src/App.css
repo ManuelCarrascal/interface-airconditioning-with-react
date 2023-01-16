@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+
+:root{
+  --primary-color: rgb(21, 19, 28);
+  --secundary-color: rgb(240, 248, 255);
+  --action-secundary-color: rgb(187, 195, 202);
+}
+[data-theme="dark"] {
+  --primary-color: #9A97F3;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --heading-color: #818cab;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family:   'Segoe UI';
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
+  min-width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: var(--primary-color);
+  display: grid;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  color:  var(--primary-color);
+  
+}
+.container{
+  width: 50rem;
+  height: 20rem;
+  background-color: var(--secundary-color);
+  border-radius: 0.5rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+#state{
+  font-size: 1.5rem;
+  user-select: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.button-container{
+  width: 25rem;
+  height: 5rem;
+  background-color: rgb(72, 228, 176);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+
+}
+.button-action{
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+  font-size: 3.5rem;
+  display: block;
+  color: var(--secundary-color);
+  user-select: none;
+}
+.button-action:hover{
+  color: var(--action-secundary-color);
+}
+
+.hot{
+  color: rgb(125, 8, 8);
+}
+.cold{
+  color: rgb(72, 147, 181);
+}
+
+@media (min-width: 1024px){
+  .container {
+    width: 41rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (min-width: 768px) and (max-width:1023px) {
+  .container {
+    width: 30rem;
+  }
+}
+@media (min-width: 425px) and (max-width: 767px) {
+  .container {
+    width: 20rem;
+  }
+  .button-container{
+    width: 15rem;
+  }
+}
+@media (min-width: 375px) and (max-width:424px){
+  .container {
+    width: 20rem;
+  }
+  .button-container{
+    width: 16rem;
+  }
+}
+
+@media (min-width: 320px ) and (max-width:374px) {
+  .container {
+    width: 17rem;
+  }
+  .button-container{
+    width: 12rem;
+  }
+  #state{
+    font-size: 1.35rem;
   }
 }
